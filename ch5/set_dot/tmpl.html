@@ -5,6 +5,12 @@
         <title>Go Web Programming</title>
     </head>
     <body>
-        {{ . }}
+        <div>「.」の値は、{{ . }}</div>
+        <div>
+            {{ with "Hoge" }}
+            「.」の値は、{{ . }}
+            {{ end }}
+        </div>
+        <div>「.」の値は、{{ . }}</div>
     </body>
 </html>
