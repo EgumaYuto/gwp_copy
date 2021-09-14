@@ -6,8 +6,7 @@ import (
 )
 
 func process(w http.ResponseWriter, r *http.Request) {
-	// リポジトリのトップから実行される想定
-	t, _ := template.ParseFiles("ch5/simplest/tmpl.html")
+	t, _ := template.ParseFiles("tmpl.html")
 	t.Execute(w, "Hello World!")
 }
 
