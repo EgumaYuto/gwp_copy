@@ -1,9 +1,9 @@
 package main
 
 import (
+	"html/template"
 	"math/rand"
 	"net/http"
-	"text/template"
 	"time"
 )
 
