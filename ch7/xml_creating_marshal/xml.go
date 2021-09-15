@@ -27,7 +27,7 @@ func main() {
 			Name: "Saw Sheong",
 		},
 	}
-	output, err := xml.Marshal(&post)
+	output, err := xml.MarshalIndent(&post, "", "\t")
 	if err != nil {
 		fmt.Println("Error marshaling to XML:", err)
 		return
