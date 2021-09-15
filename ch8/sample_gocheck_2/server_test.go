@@ -29,6 +29,18 @@ func (s *PostTestSuite) SetUpTest(c *C) {
 	s.writer = httptest.NewRecorder()
 }
 
+func (s *PostTestSuite) SetUpSuite(c *C) {
+	c.Log("Starting Post Test Suite")
+}
+
+func (s *PostTestSuite) TearDownSuite(c *C) {
+	c.Log("Finishing Post Test Suite")
+}
+
+func (s *PostTestSuite) TearDownTest(c *C) {
+	c.Log("Finished test - ", c.TestName())
+}
+
 func (s *PostTestSuite) TestGetPost(c *C) {
 	request, _ := http.NewRequest("GET", "/post/1", nil)
 	s.mux.ServeHTTP(s.writer, request)
