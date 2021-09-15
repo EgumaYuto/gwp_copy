@@ -10,7 +10,7 @@ type Post struct {
 	XMLName xml.Name `xml:"post"`
 	Id      string   `xml:"id,attr"`
 	Content string   `xml:"content"`
-	Author  string   `xml:"author"`
+	Author  Author   `xml:"author"`
 	Xml     string   `xml:",innerxml"`
 }
 
