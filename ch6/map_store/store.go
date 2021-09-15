@@ -1,11 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 type Post struct {
 	Id      int
 	Content string
 	Author  string
+}
+
+func (p Post) ToString() string {
+	return strconv.Itoa(p.Id) + " " + p.Content + " " + p.Author
 }
 
 var PostById map[int]*Post
@@ -29,10 +36,10 @@ func main() {
 	fmt.Println(PostById[2])
 
 	for _, post := range PostsByAuthor["Author1"] {
-		fmt.Println(post)
+		fmt.Println((*post).ToString())
 	}
 
 	for _, post := range PostsByAuthor["Author2"] {
-		fmt.Println(post)
+		fmt.Println((*post).ToString())
 	}
 }
